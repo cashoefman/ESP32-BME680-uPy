@@ -23,12 +23,14 @@ Next we have to get the Heltec Dev Board setup properly so it will run Micropyth
 
 To flash the board we are going to need ESPTOOL and AMPY. To install that you can just run.
 
-```pip install esptool adafruit-ampy rsa
+```
+pip install esptool adafruit-ampy rsa
 ```
 
 Once you do the you can now connect to the board. Plug in a USB cable and just hook the board up to a USB port on your computer. We now need to figure out what USB port this this thing is connected to, you do that with:
 
-```ls /dev/ | grep -i "tty" | grep -i "usb"
+```
+ls /dev/ | grep -i "tty" | grep -i "usb"
 export SERIALPORT="/dev/ttyUSB0"
 ```
 
@@ -36,20 +38,23 @@ Depending on your setup you will get a different output from the first command, 
 
 You can test the connection to the board by running:
 
-```esptool.py --port $SERIALPORT flash_id
+```
+esptool.py --port $SERIALPORT flash_id
 ```
 
 Next you are going to have to download the [Micropython Firmware](https://micropython.org/download/esp32/) for the Generic ESP32 module Binary from the Micropython website. I used “[esp32-idf4-20200902-v1.13.bin](https://micropython.org/resources/firmware/esp32-idf4-20200902-v1.13.bin)” but by the time you read this there might be some newer version. So use your best judgement!
 
 Once you have that downloaded your are going to erase the board and flash the new firmware, to do that rung the following two commands:
 
-```esptool.py --chip esp32 --port $SERIALPORT erase_flash
-esptool.py --chip esp32 --port $SERIALPORT --baud 460800 write_flash -z 0x1000 ~/`Downloads``esp32-idf4-20200902-v1.13.bin
+```
+esptool.py --chip esp32 --port $SERIALPORT erase_flash
+esptool.py --chip esp32 --port $SERIALPORT --baud 460800 write_flash -z 0x1000 ~/Downloads esp32-idf4-20200902-v1.13.bin
 ```
 
 Now you have a Heltec Wifi Kit 32 running Micropython, congrats! You can connect to the device by running:
 
-```screen -L $SERIALPORT 115200
+```
+screen -L $SERIALPORT 115200
 ```
 
 Note that the connection to the board is a little finicky. If it doesn’t connect, disconnect the thing from the USB port and try it again. And if you get a blank screen, try pressing enter to get to the command prompt for the board. Once you are connected you can press the RST button the on the device again and you will see the board boot up again, you will not loose the connection when you do that.
@@ -62,7 +67,8 @@ ssd1306.py this is what main.py uses to display stuff on the OLED display.
 
 config.py, not really necessary but a good practice, this file hold configuration settings that the main.py is going to use. Open this file and edit the wifi settings so it matches your wifi network. If you are using a different ESP32 board you might also need to change the led_pin otherwise your board might not work properly.
 
-```config.py
+```
+config.py
 device_config = {
  'led_pin': 25
 }
@@ -76,7 +82,8 @@ main.py this is the “program” that runs on the board, connects to Wifi, gets
 
 To flash all these files to the boar you just run:
 
-```ampy --port $SERIALPORT --baud 115200 put ssd1306.py
+```
+ampy --port $SERIALPORT --baud 115200 put ssd1306.py
 ampy --port $SERIALPORT --baud 115200 put config.py
 ampy --port $SERIALPORT --baud 115200 put main.py
 ampy --port $SERIALPORT --baud 115200 put bme680.py
@@ -84,7 +91,8 @@ ampy --port $SERIALPORT --baud 115200 put bme680.py
 
 Once you do that disconnect the board from your computer, connect it again and run:
 
-```screen -L $SERIALPORT 115200
+```
+screen -L $SERIALPORT 115200
 ```
 
 The display of the Dev Board will light up and display some setup information first and then will display the sensor readings.
