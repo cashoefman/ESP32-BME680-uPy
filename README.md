@@ -61,11 +61,11 @@ Note that the connection to the board is a little finicky. If it doesn’t conne
 
 Once that is done you are ready to upload some code to the board. You are going to need to upload 4 files.
 
-_bme680.py_** this is what main.py is going to use to get the reading from the BME680 sensor.
+**_bme680.py_** this is what main.py is going to use to get the reading from the BME680 sensor.
 
-_ssd1306.py_** this is what main.py uses to display stuff on the OLED display.
+**_ssd1306.py_** this is what main.py uses to display stuff on the OLED display.
 
-_config.py_** is not really necessary but a good practice, this file hold configuration settings that the main.py is going to use. Open this file and edit the wifi settings so it matches your wifi network. If you are using a different ESP32 board you might also need to change the led_pin otherwise your board might not work properly.
+**_config.py_** is not really necessary but a good practice, this file hold configuration settings that the main.py is going to use. Open this file and edit the wifi settings so it matches your wifi network. If you are using a different ESP32 board you might also need to change the led_pin otherwise your board might not work properly.
 
 ```
 config.py
@@ -78,7 +78,7 @@ wifi_config = {
   }
 ```
 
-_main.py_** this is the “program” that runs on the board, connects to Wifi, gets the current GMT date and time, reads the sensor and prints all the data to the OLED display.
+**_main.py_** this is the “program” that runs on the board, connects to Wifi, gets the current GMT date and time, reads the sensor and prints all the data to the OLED display.
 
 To flash all these files to the boar you just run:
 
