@@ -14,10 +14,10 @@ The BME680 Sensor Kit to Dev Board connection has some interesting parts to it. 
 
 So to get this all hooked up properly you connect:
 
-GND from the Dev Board to GND on the Sensor
-3.3V from the Dev Board to VCC on the Sensor
-Pin 15/GPIO15/OLED_SCL on the Dev Board to SCL on Sensor
-Pin 4/GPIO4/OLED_SPA on the Dev Board to SDA on the Sensor
+* GND from the Dev Board to GND on the Sensor
+* 3.3V from the Dev Board to VCC on the Sensor
+* Pin 15/GPIO15/OLED_SCL on the Dev Board to SCL on Sensor
+* Pin 4/GPIO4/OLED_SPA on the Dev Board to SDA on the Sensor
 
 Next we have to get the Heltec Dev Board setup properly so it will run Micropython. To get that setup we need to install a few things on the Raspberry Pi (or your MacBook for generic Linux machine).
 
