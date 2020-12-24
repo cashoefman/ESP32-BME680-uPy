@@ -6,7 +6,7 @@ The hardware setup I am going to play with today is fairly basic, the Heltec Dev
 
 If you are going to follow along with my, once it is all hooked up and programmed it will look something like this:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BzQP5tCt5Wk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![ESP32 BME680 uPy](https://img.youtube.com/vi/BzQP5tCt5Wk/0.jpg)](https://www.youtube.com/watch?v=BzQP5tCt5Wk)
 
 The software setup is also pretty simple, a [Raspberry Pi 4B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) as a development computer running the basic Raspberry Pi OS with desktop. I’ve been playing around with Microsoft’s [Visual Studio Code](https://code.visualstudio.com/#alt-downloads) for Raspberry Pi a bit lately so I will use that as my development environment.
 
