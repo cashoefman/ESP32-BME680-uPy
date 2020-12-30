@@ -53,7 +53,7 @@ Once you have that downloaded your are going to erase the board and flash the ne
 
 ```
 esptool.py --chip esp32 --port $SERIALPORT erase_flash
-esptool.py --chip esp32 --port $SERIALPORT --baud 460800 write_flash -z 0x1000 ~/Downloads esp32-idf4-20200902-v1.13.bin
+esptool.py --chip esp32 --port $SERIALPORT --baud 460800 write_flash -z 0x1000 ~/Downloads/esp32-idf4-20200902-v1.13.bin
 ```
 
 Now you have a Heltec Wifi Kit 32 running Micropython, congrats! You can connect to the device by running:
