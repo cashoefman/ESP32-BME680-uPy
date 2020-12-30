@@ -22,7 +22,7 @@ So to get this all hooked up properly you connect:
 
 At some point I might add a proper diagram instead of the image but this is what it looks like right now with either a Heltec Wifi Kit 32 and a Heltec LoRa 32 V2.
 
-[Layout](https://cashoefman.com/wp-content/uploads/2020/12/Heltec_LoRa_32-640x295.jpg)
+![Layout](https://cashoefman.com/wp-content/uploads/2020/12/Heltec_LoRa_32-640x295.jpg)
 
 Next we have to get the Heltec Dev Board setup properly so it will run Micropython. To get that setup we need to install a few things on the Raspberry Pi (or your MacBook for generic Linux machine).
 
