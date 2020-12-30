@@ -1,8 +1,8 @@
-# ESP32-BME680-uPy
+# ESP32-BME680-DHT22-uPy
 
 Today felt like a day for tinkering! I’ve been playing around with a bunch of different Microprocessors and Developer boards in the last few week and I’ve come to like the [Heltec Wifi Kit 32](https://heltec.org/project/wifi-kit-32/) a lot. It has been around for a while and there are quite a few examples of other projects out there but, I didn’t see this specific setup or at least not in a real working version. The nice thing is that the board has a build in SSD1306 OLED display.
 
-The hardware setup I am going to play with today is fairly basic, the Heltec Dev Board, a Bosch BME680 sensor kit, a breadboard and a few wires.
+The hardware setup I am going to play with today is fairly basic, the Heltec Dev Board, a Bosch BME680 sensor module, a DHT22 sensor module, a breadboard and a few wires.
 
 If you are going to follow along with my, once it is all hooked up and programmed it will look something like this:
 
@@ -14,10 +14,15 @@ The BME680 Sensor Kit to Dev Board connection has some interesting parts to it. 
 
 So to get this all hooked up properly you connect:
 
-* GND from the Dev Board to GND on the Sensor
-* 3.3V from the Dev Board to VCC on the Sensor
-* Pin 15/GPIO15/OLED_SCL on the Dev Board to SCL on Sensor
-* Pin 4/GPIO4/OLED_SPA on the Dev Board to SDA on the Sensor
+* GND from the Dev Board to GND on the BME 680 Sensor Module & the DHT22 Sensor Module
+* 3.3V from the Dev Board to VCC on the BME680 Sensor Module  & the DHT22 Sensor Module
+* Pin 15/GPIO15/OLED_SCL on the Dev Board to SCL on BME 680 Sensor Module
+* Pin 4/GPIO4/OLED_SPA on the Dev Board to SDA on the BME 680 Sensor Module
+* Pin 13/GPIO13 on the Dev Board to the DHT22 Sensor Module
+
+At some point I might add a proper diagram instead of the image but this is what it looks like right now with either a Heltec Wifi Kit 32 and a Heltec LoRa 32 V2.
+
+[Layout](https://cashoefman.com/wp-content/uploads/2020/12/Heltec_LoRa_32-640x295.jpg)
 
 Next we have to get the Heltec Dev Board setup properly so it will run Micropython. To get that setup we need to install a few things on the Raspberry Pi (or your MacBook for generic Linux machine).
 
